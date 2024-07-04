@@ -5,22 +5,22 @@ Feature: WebdriverUniversity - Contact Us Page
         Given I Navigate to WebdriverUniversity homepage
         When I click on the contact us button
 
-        # Scenario: Valid Contact Us Form Submission
-        #     When I type a first name
-        #     When I type a last name
-        #     When I enter an email address
-        #     When I type a comment
-        #     When I click on the submit button
-        #     Then I should be presented with a successful contact us submission message
+    Scenario: Valid Contact Us Form Submission
+        When I type a first name
+        When I type a last name
+        When I enter an email address
+        When I type a comment
+        When I click on the submit button
+        Then I should be presented with a successful contact us submission message
 
-        # Scenario: Invalid Contact Us Form Submission
-        #     When I type a first name
-        #     When I type a last name
-        #     When I type a comment
-        #     When I click on the submit button
-        #     Then I should be presented with a unsuccessful contact us submission message
+    Scenario: Invalid Contact Us Form Submission
+        When I type a first name
+        When I type a last name
+        When I type a comment
+        When I click on the submit button
+        Then I should be presented with a unsuccessful contact us submission message
 
-        # Scenario: Valid Contact Us Form Submission - Using specific data
+    Scenario: Valid Contact Us Form Submission - Using specific data
         When I type a specific first name "Tiger"
         When I type a specific last name "Wolf"
         When I type a specific email address "tiger.wolf3839@mail.com"

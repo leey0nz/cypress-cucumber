@@ -62,5 +62,6 @@ When("I type a {string} and a comment {string}", (email, comment) => {
   cy.get("textarea.feedback-input").type(comment);
 });
 Then("I should be presented with header text {string}", (message) => {
-  cy.xpath("//h1 | //body").contains(message);
+  cy.get("#contact_reply>h1").contains(message);
+  // cy.xpath("//h1 | //body").contains(message);
 });
