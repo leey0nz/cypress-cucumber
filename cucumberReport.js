@@ -19,7 +19,7 @@ const mapOs = (os) => {
   }
 };
 
-fs.readFile('cypress/reports/hoang-results.json', function read(err, data) {
+fs.readFile('cypress/reports1/hoang-results.json', function read(err, data) {
   if (err) {
     throw err;
   }

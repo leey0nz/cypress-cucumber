@@ -1,12 +1,15 @@
-import { defineConfig } from "cypress";
-import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
-import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
-import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
+import { defineConfig } from 'cypress';
+import createBundler from '@bahmutov/cypress-esbuild-preprocessor';
+import {
+  addCucumberPreprocessorPlugin,
+  afterRunHandler,
+} from '@badeball/cypress-cucumber-preprocessor';
+import createEsbuildPlugin from '@badeball/cypress-cucumber-preprocessor/esbuild';
 const fs = require('fs');
 
 export default defineConfig({
   e2e: {
-    specPattern: "**/*.feature",
+    specPattern: '**/*.feature',
     async setupNodeEvents(
       on: Cypress.PluginEvents,
       config: Cypress.PluginConfigOptions
@@ -15,17 +18,27 @@ export default defineConfig({
       await addCucumberPreprocessorPlugin(on, config);
 
       on(
-        "file:preprocessor",
+        'file:preprocessor',
         createBundler({
           plugins: [createEsbuildPlugin(config)],
         })
       );
-      on('after:run', (results) => {
+      on('after:run', async (results) => {
         if (results) {
-          fs.mkdirSync("cypress/reports", { recursive: true });
-          fs.writeFile("cypress/reports/hoang-results.json", JSON.stringify(results));
+          await afterRunHandler(config);
+          fs.mkdirSync('cypress/reports1');
+          await fs.writeFile(
+            'cypress/reports1/hoang-results.json',
+            JSON.stringify(results)
+          );
         }
-      })
+      });
+      // on('after:run', (results) => {
+      //   if (results) {
+      //     fs.mkdirSync("cypress/reports1");
+      //     // fs.writeFile("cypress/reports1/hoang-results.json", JSON.stringify(results));
+      //   }
+      // })
 
       // Make sure to return the config object as it might have been modified by the plugin.
       return config;
