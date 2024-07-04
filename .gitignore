@@ -59,3 +59,7 @@ public/
 
 # TernJS port file
 .tern-port
+
+# Auto Generate File
+reports
+screenshots
