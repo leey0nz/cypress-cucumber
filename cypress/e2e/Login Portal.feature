@@ -11,8 +11,8 @@ Feature: Webdriver Login Portal page
         Then I should be presented with a successful login portal submission '<message>'
 
         Examples:
-            | userName  | passWord     | message              |
-            | webdriver | webdriver123 | validation succeeded |
+            | userName  | passWord     | message               |
+            | webdriver | webdriver123 | validation succeededd |
 
     Scenario Outline: Login portall page unsucessfull with invalid Username and Password
         When I type a invalid username '<invaldUserName>' and password '<invalidPassWord>'

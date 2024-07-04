@@ -14,8 +14,13 @@
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.1.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.1",
+    "chalk": "^5.3.0",
     "cypress-xpath": "^2.0.1",
+    "fs-extra": "^11.2.0",
     "multiple-cucumber-html-reporter": "^3.6.2",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "puppeteer": "^22.12.1",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"

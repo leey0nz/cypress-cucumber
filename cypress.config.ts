@@ -26,9 +26,9 @@ export default defineConfig({
       on('after:run', async (results) => {
         if (results) {
           await afterRunHandler(config);
-          fs.mkdirSync('cypress/reports1');
+          fs.mkdirSync('cypress/reports/data-result');
           await fs.writeFile(
-            'cypress/reports1/hoang-results.json',
+            'cypress/reports/data-result/results.json',
             JSON.stringify(results)
           );
         }

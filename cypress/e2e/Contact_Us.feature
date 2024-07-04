@@ -5,7 +5,7 @@ Feature: WebdriverUniversity - Contact Us Page
         Given I Navigate to WebdriverUniversity homepage
         When I click on the contact us button
 
-        # Scenario: Valid Contact Us Form Submission
+    Scenario: Valid Contact Us Form Submission
         When I type a first name
         When I type a last name
         When I enter an email address
