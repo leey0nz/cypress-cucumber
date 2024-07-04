@@ -6,7 +6,7 @@ report.generate({
   metadata: {
     browser: {
       name: "chrome",
-      version: "126.0.6478.128",
+      version: "126.0.6478.127",
     },
     device: "Local test machine",
     platform: {
