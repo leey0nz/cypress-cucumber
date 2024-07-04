@@ -1,0 +1,35 @@
+{
+  "name": "cyress-automation-framework",
+  "version": "1.0.0",
+  "description": "Cypress Cucumber Automation Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "f-rgs-headed": "cypress run --headed -b chrome -s 'cypress/e2e/*.feature'",
+    "f-rgs-headless": "cypress run -b chrome -s 'cypress/e2e/*.feature'",
+    "login-and-smoke-headed": "cypress run -e TAGS=\"@smoke or @login\" --headed",
+    "login-and-smoke-headless": "cypress run -e TAGS=\"@smoke or @login\"",
+    "format": "node cypress/support/cucumberReport.js",
+    "combine": "cypress run -b chrome -s 'cypress/e2e/*.feature' & node cucumberReport.js"
+  },
+  "author": "Tiger",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.1",
+    "cypress": "^13.13.0",
+    "cypress-xpath": "^2.0.1",
+    "ts-loader": "^9.5.1"
+  },
+  "devDependencies": {
+    "multiple-cucumber-html-reporter": "^3.6.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js",
+    "json": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-json/cucumber-report.json"
+    }
+  }
+}
