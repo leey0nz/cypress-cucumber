@@ -20,10 +20,10 @@
     "multiple-cucumber-html-reporter": "^3.6.2",
     "os": "^0.1.2",
     "path": "^0.12.7",
-    "puppeteer": "^22.12.1",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "xpath": "^0.0.34"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,

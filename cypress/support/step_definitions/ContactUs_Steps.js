@@ -51,7 +51,7 @@ When(
   }
 );
 When(
-  "I type a first name {word} and a last name {string}",
+  "I type a first name {string} and a last name {string}",
   (firstName, lastName) => {
     cy.get('[name="first_name"]').type(firstName);
     cy.get('[name="last_name"]').type(lastName);
