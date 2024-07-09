@@ -6,7 +6,8 @@
     "login-and-smoke-headed": "cypress run -e TAGS=\"@smoke or @login\" --headed",
     "login-and-smoke-headless": "cypress run -e TAGS=\"@smoke or @login\"",
     "format": "node cypress/support/cucumberReport.js",
-    "combine": "cypress run -b chrome -s 'cypress/e2e/*.feature' & node cucumberReport.js"
+    "combine2": "cypress run -b chrome -s 'cypress/e2e/*.feature' && node cucumberReport.js",
+    "combine": "./run-test.sh"
   },
   "devDependencies": {
     "cypress": "^13.13.0"

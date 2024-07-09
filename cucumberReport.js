@@ -16,6 +16,7 @@ const mapOs = (os) => {
   } else if (os.startsWith("ios")) {
     return "ios";
   }
+  return os
 };
 
 fs.readFile(

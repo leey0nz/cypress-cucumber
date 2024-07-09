@@ -1,15 +1,15 @@
-import { defineConfig } from 'cypress';
-import createBundler from '@bahmutov/cypress-esbuild-preprocessor';
+import { defineConfig } from "cypress";
+import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import {
   addCucumberPreprocessorPlugin,
   afterRunHandler,
-} from '@badeball/cypress-cucumber-preprocessor';
-import createEsbuildPlugin from '@badeball/cypress-cucumber-preprocessor/esbuild';
-const fs = require('fs');
+} from "@badeball/cypress-cucumber-preprocessor";
+import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
+const fs = require("fs");
 
 export default defineConfig({
   e2e: {
-    specPattern: '**/*.feature',
+    specPattern: "**/*.feature",
     async setupNodeEvents(
       on: Cypress.PluginEvents,
       config: Cypress.PluginConfigOptions
@@ -18,17 +18,19 @@ export default defineConfig({
       await addCucumberPreprocessorPlugin(on, config);
 
       on(
-        'file:preprocessor',
+        "file:preprocessor",
         createBundler({
           plugins: [createEsbuildPlugin(config)],
         })
       );
-      on('after:run', async (results) => {
+      on("after:run", async (results) => {
         if (results) {
           await afterRunHandler(config);
-          fs.mkdirSync('cypress/reports/data-result');
+          try {
+            fs.mkdirSync("cypress/reports/data-result");
+          } catch (error) {}
           await fs.writeFile(
-            'cypress/reports/data-result/results.json',
+            "cypress/reports/data-result/results.json",
             JSON.stringify(results)
           );
         }
