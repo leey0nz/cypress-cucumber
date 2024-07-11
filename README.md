@@ -73,4 +73,4 @@ For more information on how to configure and use these libraries, please refer t
 - [OS Library Documentation](https://www.npmjs.com/package/os)
 - [Cypress XPath Documentation](https://github.com/cypress-io/cypress-xpath)
 
-Happy Testing!
+Happy Testing! 🐯 ❤️
