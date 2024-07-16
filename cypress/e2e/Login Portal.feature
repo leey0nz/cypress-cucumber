@@ -2,8 +2,9 @@
 Feature: Webdriver Login Portal page
 
     Background: Pre-conditions
-        Given I Navigate to WebdriverUniversity homepage
-        When I click on the login portal button
+        # Given I Navigate to WebdriverUniversity homepage
+        # When I click on the login portal button
+        Given I navigate to the webdriveruniversity login page
     @smoke
     Scenario Outline: Login portall page sucessfull with valid Username and Password
         When I type a username '<userName>' and  password '<passWord>'

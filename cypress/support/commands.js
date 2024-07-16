@@ -35,3 +35,6 @@
 //     }
 //   }
 // }
+Cypress.Commands.add("clickAndOpenLink_InSameTab", (selector) => {
+  cy.get(selector).invoke("removeAttr", "target").click();
+});
